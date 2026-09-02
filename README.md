@@ -495,4 +495,4 @@ It is making FT8/FT4 operation more predictable and practical:
 > And when the operator chooses to wait for a Wanted station, return to that state correctly.
 
 73,  
-**Yoshi / JP1LRT**
+**[Yoshi / JP1LRT](https://www.qrz.com/db/JP1LRT)**
