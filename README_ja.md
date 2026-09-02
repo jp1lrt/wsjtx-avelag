@@ -498,7 +498,7 @@ WSJT-Xのoriginal authors / contributors、Uwe / DG2YCBとWSJT-X Improved commun
 
 ## JP1LRTについて
 
-**Yoshi / JP1LRT**
+**津久浦慶治(つくうら　よしはる) / JP1LRT**
 
 - 1983年開局
 - JTDX authorized beta tester
@@ -516,4 +516,4 @@ FT8/FT4運用を、**より予測可能で、より実用的にすること**で
 > そして運用者がWanted局を待つと決めたなら、その状態へ正しく戻る。
 
 73,  
-**Yoshi / JP1LRT**
+**[津久浦慶治 / JP1LRT](https://www.qrz.com/db/JP1LRT)**
