@@ -1,1 +1,338 @@
-# wsjtx-avelag
+# WSJT-X Improved JP1LRT Edition
+
+[![Status](https://img.shields.io/badge/status-Public%20Release%20Candidate-orange)](https://github.com/jp1lrt/wsjtx-avelag/releases/tag/20260901A-REB522-P6)
+[![Current release](https://img.shields.io/badge/release-20260901A--REB522--P6-blue)](https://github.com/jp1lrt/wsjtx-avelag/releases/tag/20260901A-REB522-P6)
+![User Guide](https://img.shields.io/badge/User%20Guide-Edition%201.8%20%7C%2016%20languages-brightgreen)
+
+**A JTDX-inspired operating layer for WSJT-X Improved — preserving the original capabilities while adding smarter CQ RUN, Wanted/Hunting, safer QSO transitions, and operator-focused FT8/FT4 workflow.**
+
+> **Current Public Release Candidate:** `20260901A-REB522-P6 / P6-AL`  
+> **Base:** WSJT-X Improved `3.1.0 / 260522` (22 May 2026)  
+> **This is not a WSJT-X Improved 3.2.0-based release.**
+
+**Latest release:**  
+https://github.com/jp1lrt/wsjtx-avelag/releases/tag/20260901A-REB522-P6
+
+---
+
+## Why JP1LRT Edition exists
+
+I am **Yoshi / JP1LRT**, an **authorized JTDX beta tester** and a contributor responsible for **Japanese localization**.
+
+In everyday FT8/FT4 operation, I had become very comfortable with the JTDX operating philosophy — especially its CQ RUN workflow, priority-based caller selection, Wanted-station handling, and the way the operator can keep control while still using automation.
+
+Then WSJT-X 3.0 appeared, followed by WSJT-X Improved 3.1.
+
+I started reading and analyzing the source code, and I became deeply impressed by the newer decoder architecture and the practical decoder improvements that had been added to WSJT-X Improved.
+
+That led to a very simple idea:
+
+> **What if I could use the WSJT-X Improved decoder and platform, but operate it in a way that feels much more like JTDX?**
+
+That idea became **WSJT-X Improved JP1LRT Edition**.
+
+The goal is **not** to turn WSJT-X Improved into JTDX, and not to remove or replace the capabilities that already exist in WSJT-X / WSJT-X Improved.
+
+Instead, JP1LRT Edition tries to:
+
+- **keep what already works,**
+- **preserve the original WSJT-X Improved capabilities,**
+- and **add a JTDX-inspired operating layer on top of them.**
+
+The JP1LRT modifications do **not** replace or retune the FT8 decoder core. The main work is in the operating logic around it: CQ RUN selection, Wanted/Hunting, QSO ownership and handoff, terminal-message protection, manual intervention, DF behavior, diagnostics, and related workflow improvements.
+
+### The decoder analysis that inspired this project
+
+I also wrote a long-form source-based article about the WSJT-X Improved 3.1 decoder and why it caught my attention:
+
+**Understanding FT8 Decoder Settings in WSJT-X 3.1 improved**  
+https://www.asahi-net.or.jp/~vj5y-tkur/ft8/wsjtx_31improved_article_en.html
+
+That article looks at Decode Start, staged decoding, the STD/MTD relationship, CPU allocation inside the FT8 cycle, and practical decoder tuning.
+
+---
+
+## What makes JP1LRT Edition different?
+
+JP1LRT Edition is designed around **real operating flow**.
+
+The priority is not simply to add more buttons or more automation. The goal is to make automatic operation **predictable**, while protecting the operator's intent and the state of an active QSO.
+
+### Key operating ideas
+
+- **AutoSeq 2 / AutoSeq 3**  
+  Priority-based CQ RUN caller selection inspired by the operating style familiar to JTDX users.
+
+- **Wanted / Hunting**  
+  Wait for Wanted callsigns, prefixes, grids, or other configured targets and acquire them when conditions are safe.
+
+- **Wanted-Pounce no-reply return to Hunting (P6)**  
+  A Hunting-origin QSO that receives no continuing response after exactly three transmitted reports does not send a fourth report and does not drift into automatic CQ. The program safely returns to Hunting standby while keeping Wanted Pounce armed.
+
+- **Terminal Hold**  
+  Keeps QSO ownership through RR73 / 73 handling and the protected terminal phase, helping prevent premature clearing or unsafe target handoff.
+
+- **Safe manual takeover**  
+  Manual operator action has priority, but protected transmissions are allowed to finish before the new target is applied.
+
+- **Active-QSO protection**  
+  A third-party decode should not overwrite the station that is already in progress.
+
+- **Best S&P language-independent selection**  
+  New Call on Band and New DXCC selection uses stable internal category identifiers rather than translated display strings.
+
+- **LoTW tie-break**  
+  When otherwise equivalent candidates remain, LoTW status can be used as a tie-break.
+
+- **Directed-CQ safety**  
+  Automatic acquisition has explicit safety rules for `CQ DX` and canonical regional CQs.
+
+- **Orange Wanted vs. Blue display-only highlighting**  
+  Orange can participate in automatic Wanted / priority behavior. Blue is available for visual highlighting without becoming an automatic Wanted target.
+
+- **Quick Call OFF remains meaningful**  
+  Best S&P may prepare the target, DX Call, DX Grid, and transmit message without automatically beginning transmission.
+
+- **High-precision own-station Grid Locator**  
+  Up to 10 characters can be entered for reporting and services that can use higher locator precision.
+
+- **Detailed diagnostics**  
+  Optional JP1LRT diagnostic information can be recorded in `ALL.TXT` to help reproduce and analyze difficult operating-state problems.
+
+This is deliberately an **additive** design: the intention is to enhance everyday FT8/FT4 operation without taking away the normal WSJT-X Improved operating capabilities.
+
+---
+
+## Current release: P6 / P6-AL
+
+| Item | Current value |
+|---|---|
+| Release | `20260901A-REB522-P6 / P6-AL` |
+| Status | **Public Release Candidate** |
+| Base | WSJT-X Improved `3.1.0 / 260522` |
+| Base date | 22 May 2026 |
+| User Guide | Edition 1.8 |
+| Guide languages | **16** |
+| Windows builds | Standard GUI / AL GUI |
+| Source | Complete source bundles provided |
+
+### Standard and AL
+
+Both builds contain the same current QSO, AutoSeq, Wanted/Hunting, Terminal Hold, manual-takeover safety, Best S&P, and directed-CQ safety logic.
+
+Their principal difference is the **GUI layout**.
+
+**Do not extract Standard and AL into the same directory.**
+
+---
+
+## P6 highlight — Wanted-Pounce no-reply handling
+
+P6 improves an important edge case in Hunting.
+
+When a QSO was started by Wanted Pounce / Hunting and the partner does not continue after exactly three transmitted reports:
+
+- no fourth report is transmitted,
+- CQ is not started automatically,
+- Auto Tx stops,
+- DX Call is cleared,
+- the program returns to Tx6 / CALLING,
+- Wanted Pounce remains armed,
+- orange Hunting standby is restored,
+- accumulated AutoSeq candidates are preserved,
+- and the same Wanted station can be acquired again later as a new QSO.
+
+If a valid response such as **RR73** arrives immediately after report #3, normal QSO completion takes priority:
+
+**final 73 → Terminal Hold → normal return to Hunting**
+
+Normal `CQ: First` and normal AutoSeq 2 CQ RUN no-progress behavior remain separate and unchanged by this P6-specific Hunting return path.
+
+---
+
+## Download and SHA-256
+
+### Windows GUI packages
+
+| Build | File | SHA-256 |
+|---|---|---|
+| Standard GUI | `WSJT-X_20260901A-REB522-P6_win64.zip` | `d69ef54fb7d10feb3a7bc9620497eda8ec40c700f08f4d5302e8e016a02e992b` |
+| AL GUI | `WSJT-X_20260901A-REB522-P6-AL_win64.zip` | `658db59666b89ae4884365e5ba55087b234b29aaa0cf7950fee80fcb2ab800e7` |
+
+### Source bundles
+
+| Build | File | SHA-256 |
+|---|---|---|
+| Standard source | `WSJT-X_20260901A-REB522-P6_source_bundle.zip` | `86e53df77bacaa93fc16bed15aec8e8ae1529231df16873486dacdb619803e2c` |
+| AL source | `WSJT-X_20260901A-REB522-P6-AL_source_bundle.zip` | `8ecb9f4d6ec4763a2eb03f7d33a1971466263b7435a7efc491e56b8365a1c1f4` |
+
+Corresponding `.sha256` sidecar files are provided with the release assets.
+
+**Download:**  
+https://github.com/jp1lrt/wsjtx-avelag/releases/tag/20260901A-REB522-P6
+
+---
+
+## User Guide Edition 1.8 — 16 languages
+
+The P6 / P6-AL User Guide is available in:
+
+- 🇯🇵 Japanese
+- 🇬🇧 English
+- 🇫🇷 French
+- 🇪🇸 Spanish
+- 🇩🇪 German
+- 🇨🇳 Chinese — Simplified
+- 🇹🇼 Chinese — Traditional
+- 🇰🇷 Korean
+- 🇵🇹 Portuguese
+- 🇮🇹 Italian
+- 🇳🇱 Dutch
+- 🇷🇺 Russian
+- 🇵🇱 Polish
+- 🇹🇷 Turkish
+- 🇸🇪 Swedish
+- 🇮🇩 Indonesian
+
+The English Edition 1.8 is the semantic master for the multilingual guides.
+
+The guides cover installation, Standard / AL differences, AutoSeq 2/3, Wanted/Hunting, Terminal Hold, manual takeover, Best S&P, DF behavior, diagnostics, known limitations, and Public RC precautions.
+
+All current guide files are available from the P6 release page:
+
+https://github.com/jp1lrt/wsjtx-avelag/releases/tag/20260901A-REB522-P6
+
+---
+
+## Public RC precautions
+
+P6 / P6-AL are **Public Release Candidates**, not GA/stable releases.
+
+For initial testing:
+
+1. Keep your known-good installation.
+2. Extract JP1LRT Edition into a **new, separate folder**.
+3. Do not mix Standard and AL files.
+4. Use a separate `--rig-name` profile when testing alongside another build.
+5. Back up your settings and logs.
+6. Verify callsign, grid, rig, PTT, audio, reporting, and logging settings.
+7. Monitor the generated Tx message, selected DX Call, and Auto Tx state.
+8. Do not use the Public RC for unattended or unmonitored operation.
+9. Stop transmission immediately if anything unexpected occurs.
+
+Automatic selection does not remove the operator's responsibility for transmitted messages or regulatory compliance.
+
+---
+
+## Known limitations / areas still under investigation
+
+P6 does **not** claim to have solved every existing issue.
+
+Current known items include:
+
+- Prefix-form slash calls such as `F/DB6LL` remain an incomplete RR73 area and should be monitored carefully.
+- An intermittent `jt9.exe` SIGSEGV remains a separate unresolved investigation item.
+- A reported issue involving **“Highlight also messages with 73 or RR73”** remains under investigation.
+- With `--language=es`, some newly added untranslated UI strings may appear in Japanese instead of English because of existing translator-stacking behavior. This does not affect QSO logic or transmitted messages.
+- Fox/Hound is not the primary modification/test scope.
+- Do not assume that every FT8/FT4 protection or score-mode rule applies identically to MSK144 or other modes.
+
+A Public RC validation result does **not** mean that every mode, setting combination, or boundary condition has been exhaustively exercised.
+
+---
+
+## Reporting a problem
+
+If you find unexpected behavior, please include as much of the following as possible:
+
+- Standard or AL build
+- complete version identifier from the title bar
+- Windows version
+- mode and relevant settings
+- whether Wanted Pounce / Hunting was armed
+- Quick Call ON/OFF
+- event time in UTC
+- expected behavior
+- actual behavior
+- relevant `ALL.TXT` excerpt
+- screenshot when useful
+- `wsjtx_log.adi` excerpt when applicable
+
+For diagnostic reproduction, enable the JP1LRT diagnostic recording option described in the User Guide.
+
+Please review logs before sharing them publicly. They may contain callsigns, locators, frequencies, timestamps, and internal operating state.
+
+---
+
+## Development background and related reading
+
+### Decoder analysis
+
+- **Understanding FT8 Decoder Settings in WSJT-X 3.1 improved — English**  
+  https://www.asahi-net.or.jp/~vj5y-tkur/ft8/wsjtx_31improved_article_en.html
+
+### JP1LRT blog — development notes / background
+
+- 2026-08-18  
+  https://jp1lrt.asablo.jp/blog/2026/08/18/9871594
+
+- 2026-08-07  
+  https://jp1lrt.asablo.jp/blog/2026/08/07/9869636
+
+- 2026-05-16  
+  https://jp1lrt.asablo.jp/blog/2026/05/16/9854759
+
+- 2026-03-17  
+  https://jp1lrt.asablo.jp/blog/2026/03/17/9842642
+
+### Related posts on X
+
+- https://x.com/JP1LRT_/status/2093349864067506189
+- https://x.com/JP1LRT_/status/2091531034001330434
+- https://x.com/JP1LRT_/status/2042862234498666940
+- https://x.com/JP1LRT_/status/2041459434300518906
+
+---
+
+## Upstream projects and acknowledgement
+
+JP1LRT Edition exists because of the work done by the upstream amateur-radio software communities.
+
+- **WSJT-X**  
+  https://wsjtx.sourceforge.io/
+
+- **WSJT-X Improved by Uwe Risse / DG2YCB**  
+  https://sourceforge.net/projects/wsjt-x-improved/
+
+- **JTDX**  
+  https://sourceforge.net/projects/jtdx/
+
+JP1LRT Edition is an **independently modified edition**. It is not an official release of WSJT-X, WSJT-X Improved, or JTDX.
+
+The project is based on the GPL-licensed WSJT-X / WSJT-X Improved code lineage. Complete source bundles are published with the binary releases; consult the source bundle and included license/copyright notices for the applicable terms.
+
+My sincere thanks go to the original WSJT-X authors and contributors, Uwe / DG2YCB and the WSJT-X Improved community, and the JTDX developers and testers whose work and operating ideas made this project possible.
+
+---
+
+## About JP1LRT
+
+**Yoshi / JP1LRT**
+
+- Amateur radio operator since 1983
+- Authorized JTDX beta tester
+- JTDX Japanese localization contributor
+- Developer / maintainer of WSJT-X Improved JP1LRT Edition
+
+My main interest is not automation for its own sake.
+
+It is making FT8/FT4 operation more predictable and practical:
+
+> Protect the active QSO.  
+> Protect terminal handling.  
+> Respect deliberate manual operator action.  
+> Select the next station intelligently.  
+> And when the operator chooses to wait for a Wanted station, return to that state correctly.
+
+73,  
+**Yoshi / JP1LRT**
