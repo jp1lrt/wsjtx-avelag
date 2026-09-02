@@ -61,10 +61,13 @@ The JP1LRT modifications do **not** replace or retune the FT8 decoder core. The 
 
 I also wrote a long-form source-based article about the WSJT-X Improved 3.1 decoder and why it caught my attention:
 
-**Understanding FT8 Decoder Settings in WSJT-X 3.1 improved**  
-https://www.asahi-net.or.jp/~vj5y-tkur/ft8/wsjtx_31improved_article_en.html
+**Understanding FT8 Decoder Settings in WSJT-X 3.1 improved**
 
-That article looks at Decode Start, staged decoding, the STD/MTD relationship, CPU allocation inside the FT8 cycle, and practical decoder tuning.
+The decoder-analysis article is now available in **16 languages**:
+
+[🇬🇧 English](https://www.asahi-net.or.jp/~vj5y-tkur/ft8/wsjtx_31improved_article_en.html) | [🇯🇵 日本語](https://www.asahi-net.or.jp/~vj5y-tkur/ft8/wsjtx_31improved_article_ja.html) | [🇫🇷 Français](https://www.asahi-net.or.jp/~vj5y-tkur/ft8/wsjtx_31improved_article_fr.html) | [🇩🇪 Deutsch](https://www.asahi-net.or.jp/~vj5y-tkur/ft8/wsjtx_31improved_article_de.html) | [🇪🇸 Español](https://www.asahi-net.or.jp/~vj5y-tkur/ft8/wsjtx_31improved_article_es.html) | [🇨🇳 简体中文](https://www.asahi-net.or.jp/~vj5y-tkur/ft8/wsjtx_31improved_article_zh-cn.html) | [🇹🇼 繁體中文](https://www.asahi-net.or.jp/~vj5y-tkur/ft8/wsjtx_31improved_article_zh-tw.html) | [🇰🇷 한국어](https://www.asahi-net.or.jp/~vj5y-tkur/ft8/wsjtx_31improved_article_ko.html) | [🇵🇹 Português](https://www.asahi-net.or.jp/~vj5y-tkur/ft8/wsjtx_31improved_article_pt.html) | [🇮🇹 Italiano](https://www.asahi-net.or.jp/~vj5y-tkur/ft8/wsjtx_31improved_article_it.html) | [🇳🇱 Nederlands](https://www.asahi-net.or.jp/~vj5y-tkur/ft8/wsjtx_31improved_article_nl.html) | [🇷🇺 Русский](https://www.asahi-net.or.jp/~vj5y-tkur/ft8/wsjtx_31improved_article_ru.html) | [🇵🇱 Polski](https://www.asahi-net.or.jp/~vj5y-tkur/ft8/wsjtx_31improved_article_pl.html) | [🇹🇷 Türkçe](https://www.asahi-net.or.jp/~vj5y-tkur/ft8/wsjtx_31improved_article_tr.html) | [🇸🇪 Svenska](https://www.asahi-net.or.jp/~vj5y-tkur/ft8/wsjtx_31improved_article_sv.html) | [🇮🇩 Bahasa Indonesia](https://www.asahi-net.or.jp/~vj5y-tkur/ft8/wsjtx_31improved_article_id.html)
+
+The article looks at Decode Start, staged decoding, the STD/MTD relationship, CPU allocation inside the FT8 cycle, and practical decoder tuning.
 
 ---
 
@@ -443,10 +446,11 @@ Please review logs before sharing them publicly. They may contain callsigns, loc
 
 ## Development background and related reading
 
-### Decoder analysis
+### Decoder analysis — 16 languages
 
-- **Understanding FT8 Decoder Settings in WSJT-X 3.1 improved — English**  
-  https://www.asahi-net.or.jp/~vj5y-tkur/ft8/wsjtx_31improved_article_en.html
+**Understanding FT8 Decoder Settings in WSJT-X 3.1 improved**
+
+[🇬🇧 English](https://www.asahi-net.or.jp/~vj5y-tkur/ft8/wsjtx_31improved_article_en.html) | [🇯🇵 日本語](https://www.asahi-net.or.jp/~vj5y-tkur/ft8/wsjtx_31improved_article_ja.html) | [🇫🇷 Français](https://www.asahi-net.or.jp/~vj5y-tkur/ft8/wsjtx_31improved_article_fr.html) | [🇩🇪 Deutsch](https://www.asahi-net.or.jp/~vj5y-tkur/ft8/wsjtx_31improved_article_de.html) | [🇪🇸 Español](https://www.asahi-net.or.jp/~vj5y-tkur/ft8/wsjtx_31improved_article_es.html) | [🇨🇳 简体中文](https://www.asahi-net.or.jp/~vj5y-tkur/ft8/wsjtx_31improved_article_zh-cn.html) | [🇹🇼 繁體中文](https://www.asahi-net.or.jp/~vj5y-tkur/ft8/wsjtx_31improved_article_zh-tw.html) | [🇰🇷 한국어](https://www.asahi-net.or.jp/~vj5y-tkur/ft8/wsjtx_31improved_article_ko.html) | [🇵🇹 Português](https://www.asahi-net.or.jp/~vj5y-tkur/ft8/wsjtx_31improved_article_pt.html) | [🇮🇹 Italiano](https://www.asahi-net.or.jp/~vj5y-tkur/ft8/wsjtx_31improved_article_it.html) | [🇳🇱 Nederlands](https://www.asahi-net.or.jp/~vj5y-tkur/ft8/wsjtx_31improved_article_nl.html) | [🇷🇺 Русский](https://www.asahi-net.or.jp/~vj5y-tkur/ft8/wsjtx_31improved_article_ru.html) | [🇵🇱 Polski](https://www.asahi-net.or.jp/~vj5y-tkur/ft8/wsjtx_31improved_article_pl.html) | [🇹🇷 Türkçe](https://www.asahi-net.or.jp/~vj5y-tkur/ft8/wsjtx_31improved_article_tr.html) | [🇸🇪 Svenska](https://www.asahi-net.or.jp/~vj5y-tkur/ft8/wsjtx_31improved_article_sv.html) | [🇮🇩 Bahasa Indonesia](https://www.asahi-net.or.jp/~vj5y-tkur/ft8/wsjtx_31improved_article_id.html)
 
 ---
 
