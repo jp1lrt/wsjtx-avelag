@@ -110,6 +110,15 @@ The priority is not simply to add more buttons or more automation. The goal is t
 - **Quick Call OFF remains meaningful**  
   Best S&P may prepare the target, DX Call, DX Grid, and transmit message without automatically beginning transmission.
 
+- **JTDX-inspired Band Activity / Activity Window display**  
+  The activity display was expanded so useful station attributes can remain visible not only on CQ lines, but also on ordinary QSO traffic such as reports, `RRR`, `RR73` and `73`. This makes the window much closer to the information-dense operating view I was accustomed to in JTDX.
+
+- **Explicit LoTW-user indication**  
+  When current LoTW-user data is available, LoTW users are marked explicitly in the activity display. Country/entity, worked/B4 state, Wanted/highlight status and other station attributes can also be shown without depending on the line being a CQ.
+
+- **Improved Wide Graph readability**  
+  The Wide Graph / waterfall display was refined for practical everyday use. Contrast uses JTDX-derived median-noise normalization, with **Gain -11 / Zero 7** as practical starting values. I also corrected the Wide Graph layout so the clock text is no longer clipped and remains properly readable.
+
 - **High-precision own-station Grid Locator**  
   Up to 10 characters can be entered for reporting and services that can use higher locator precision.
 
@@ -127,19 +136,123 @@ This is deliberately an **additive** design: the intention is to enhance everyda
 
 ## How the project grew
 
-The development sequence is part of the character of this edition:
+The release history shows that JP1LRT Edition was **not designed all at once**. It grew very quickly from one practical timing aid into a broader JTDX-inspired operating environment.
 
-1. **Avg/Lag and internal timing work** — the original starting point.
-2. **CQ RUN / AutoSeq ownership and QSO-state protection.**
-3. **Wanted callsign, prefix and grid priority.**
-4. **Wanted Pounce / Hunting and Orange-vs-Blue action separation.**
-5. **Terminal Hold and FT8/FT4 terminal-message arbitration.**
-6. **Rx DF following, deferred/manual takeover protection and stale-target safeguards.**
-7. **Best S&P language-independent priority handling and directed-CQ safety.**
-8. **Higher-precision Grid Locator support, expanded `ALLCALL7.TXT`, diagnostics and Public RC packaging.**
-9. **P5/P6 Hunting-return refinements**, including the P6 three-report no-reply return to Hunting.
+### April 2026 — the project takes shape
 
-What began with one timing display gradually became a broader attempt to combine the **decoder/platform I liked in WSJT-X Improved** with the **operating flow I was accustomed to in JTDX**.
+1. **6 April — Avg/Lag was the starting point (`v20260406`).**  
+   The first published JP1LRT build was the **Avg/Lag display patch**.
+
+2. **7 April — Avg/Lag/Sync (`v20260407`).**  
+   The timing experiment expanded into Avg/Lag plus internal logical-time Sync.
+
+3. **8 April — the Wide Graph / waterfall became part of the project (`v20260408`).**  
+   JTDX's `scale_by_median()` normalization was ported to improve waterfall contrast, the gain calculation was changed toward the JTDX behavior, and numeric Gain/Zero tooltips were added.
+
+4. **9 April — AutoSeq 2/3 and priority-based CQ operation (`v20260409`).**  
+   AutoSeq 2 and AutoSeq 3 were added, together with priority-based station selection. Non-CQ message coloring was also extended in a JTDX-like direction.
+
+5. **9 April evening — JTDX-style display and large `ALLCALL7.TXT` support (`v20260409b`).**  
+   This was an important early expansion, not a late addition. The release added:
+   - attribute-oriented highlighting for non-CQ lines,
+   - an explicit **LoTW `●` marker**,
+   - improved Fox/Hound / MSHV composite-message presentation,
+   - current-DX-Call row emphasis,
+   - Wide Graph identification,
+   - and **larger `ALLCALL7.TXT` array/read support**.  
+   The following `v20260409c` repack restored the full ALLCALL7 dataset when the preceding package was found incomplete.
+
+6. **11 April — standalone packaging and project identification (`v20260411b`).**  
+   The Windows package became self-contained and the modified build gained explicit PSK Reporter / title-bar identification.
+
+7. **13 April — CQ RUN became a real operating system (`v20260413`).**  
+   Automatic next-station CQ RUN handoff was introduced, together with ADIF snapshot protection and stronger manual/AutoSeq ownership safeguards. The `ALLCALL7.TXT` implementation was further expanded to a **250,000-entry-class capacity**; the release notes record a 210,981-entry dataset at that stage.
+
+8. **17–28 April — terminal-message and target-selection hardening.**  
+   RR73/73 duplicate-transmission problems, stale candidates, manual-target ownership and double-click corner cases were investigated and fixed.  
+   On **27 April (`v20260427B`)**, Wanted callsign/prefix/grid priority was added to AutoSeq / CQ RUN.
+
+### May 2026 — Wanted/Hunting becomes a major theme
+
+9. **25–27 May — Wanted Pounce / Hunting and color-action separation.**  
+   The `v20260525A–G` line developed aggressive Wanted pounce, stale timeout and return-to-Hunting behavior.  
+   `v20260527C` then separated the roles clearly:
+   - **Orange** = display + Wanted / AutoSeq / pounce action
+   - **Blue** = display-only highlighting
+
+10. **29 May — FT4 late-pick and target DF following (`v20260529D`).**  
+    AutoSeq 2 late-pick support was extended to FT4, and Rx DF could follow a target's decoded DF while calling without moving Tx DF.
+
+### June 2026 — QSO ownership and terminal safety are hardened
+
+11. **June — Terminal Hold, terminal arbitration and manual-takeover safety.**  
+    Development concentrated on protecting the active QSO through RR73/73, preventing stale ownership and unsafe next-target handoff, and defining safe behavior when the operator intervenes manually.
+
+12. **Late June — Rx DF / Terminal Hold interaction.**  
+    The RXDF1/RXDF2 line refined when Rx DF may return to Tx DF and explicitly prevented premature Rx-marker restoration while Terminal Hold was still active.
+
+### July 2026 — Standard and AL become parallel builds
+
+13. **July — further active-QSO, stale-target and manual-takeover protection.**  
+    The operating logic continued to be hardened from tester feedback.
+
+14. **22 July line — Standard and AL GUI builds.**  
+    The project formally distributed the same core logic in:
+    - **Standard GUI** — WSJT-X Improved PLUS-style
+    - **AL GUI** — AL_PLUS / JTDX-like layout  
+    The first multilingual User Guide series was also published in English, Japanese, German and Spanish.
+
+### August–September 2026 — Public RC maturation
+
+15. **August — higher-precision Grid, directed-CQ safety and release-line consolidation.**  
+    The GL10/RCQ work added direct higher-precision own-grid support while preserving mode-safe transmitted locator lengths, and automatic acquisition gained explicit `CQ DX` / regional-CQ safety gates.
+
+16. **August — REB522 / P3→P5 Public-RC line.**  
+    The accumulated work was rebased and consolidated into the JP1LRT Edition release line. Best S&P language-independent selection and Return-to-Hunting behavior were among the later refinements.
+
+17. **1 September — P6 / P6-AL.**  
+    P6 added the current Wanted-Pounce no-reply rule: after exactly three unanswered reports, no fourth report and no automatic CQ are sent; the program safely returns to Hunting. User Guide Edition 1.8 subsequently reached **16 languages**.
+
+What began as a small **Avg/Lag display experiment** therefore grew, step by step, into an attempt to combine the **decoder/platform I liked in WSJT-X Improved** with the **operating flow and information density I was accustomed to in JTDX**.
+
+---
+
+## Display improvements for everyday operation
+
+Not all JP1LRT changes are about automation or QSO state machines.
+
+A major part of the project has also been making the information on screen easier to use during real operating.
+
+### Band Activity / Activity Window
+
+I wanted the activity display to feel closer to JTDX.
+
+In the JP1LRT Edition, useful station attributes are not limited to CQ lines. They can remain visible across ordinary QSO traffic as well — including report exchanges, `RRR`, `RR73` and `73`.
+
+Depending on the available data files and settings, the display can show or emphasize information such as:
+
+- **LoTW-user status**
+- country / DXCC entity
+- worked / B4 status
+- Wanted and highlight status
+- current-target emphasis
+- other station attributes used by the JP1LRT display/classification logic
+
+This means the operator does not lose useful station context simply because the decoded line is part of an ongoing QSO rather than a CQ.
+
+The explicit **LoTW-user marker** is particularly useful because LoTW status is also used as a tie-break in parts of the JP1LRT candidate-selection logic.
+
+### Wide Graph / waterfall
+
+The Wide Graph was also adjusted for better readability.
+
+The waterfall contrast uses **JTDX-derived median-noise normalization**, and **Gain -11 / Zero 7** are practical starting values for the JP1LRT Edition.
+
+The Wide Graph layout itself was refined as well. In the upstream layout, the clock text could be partially clipped; the JP1LRT layout was adjusted so the clock remains fully visible and easier to read during normal operation.
+
+These are small UI changes compared with AutoSeq or Terminal Hold, but they are part of the same design philosophy:
+
+> **Make the information the operator actually needs easier to see while operating.**
 
 ---
 
@@ -147,7 +260,11 @@ What began with one timing display gradually became a broader attempt to combine
 
 JP1LRT Edition also expands support for the local `ALLCALL7.TXT` callsign database.
 
-The internal array/read capacity was increased to a **250,000-entry class**, and the P6 / P6-AL distribution currently contains **218,100 unique callsigns**.
+This is actually one of the **early JP1LRT modifications**. Large-ALLCALL7 support appeared in the **9 April 2026 `v20260409b`** release, where the array sizes and read limits were enlarged to accept substantially larger datasets. The following package update also restored the complete dataset after an incomplete package was detected.
+
+By `v20260413`, the internal callsign arrays and `MAXC` had been expanded to a **250,000-entry class**, with the release then documenting **210,981 entries**.
+
+The current P6 / P6-AL distribution contains **218,100 unique callsigns**.
 
 This larger dataset improves the coverage of local callsign lookup and the display/classification functions that depend on that information.
 
