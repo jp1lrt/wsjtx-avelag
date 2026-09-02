@@ -67,8 +67,11 @@ JP1LRTによる変更では、**FT8デコーダー本体を置き換えたり、
 
 WSJT-X Improved 3.1のデコーダーについて、なぜ私が強く興味を持ったのかを解説したソースコードベースの記事も書いています。
 
-**WSJT-X 3.1 improved の FT8 デコーダー設定を理解する**  
-https://www.asahi-net.or.jp/~vj5y-tkur/ft8/wsjtx_31improved_article_ja.html
+**WSJT-X 3.1 improved の FT8 デコーダー設定を理解する**
+
+デコーダー解析記事は現在、**16言語**で公開しています。
+
+[🇬🇧 English](https://www.asahi-net.or.jp/~vj5y-tkur/ft8/wsjtx_31improved_article_en.html) | [🇯🇵 日本語](https://www.asahi-net.or.jp/~vj5y-tkur/ft8/wsjtx_31improved_article_ja.html) | [🇫🇷 Français](https://www.asahi-net.or.jp/~vj5y-tkur/ft8/wsjtx_31improved_article_fr.html) | [🇩🇪 Deutsch](https://www.asahi-net.or.jp/~vj5y-tkur/ft8/wsjtx_31improved_article_de.html) | [🇪🇸 Español](https://www.asahi-net.or.jp/~vj5y-tkur/ft8/wsjtx_31improved_article_es.html) | [🇨🇳 简体中文](https://www.asahi-net.or.jp/~vj5y-tkur/ft8/wsjtx_31improved_article_zh-cn.html) | [🇹🇼 繁體中文](https://www.asahi-net.or.jp/~vj5y-tkur/ft8/wsjtx_31improved_article_zh-tw.html) | [🇰🇷 한국어](https://www.asahi-net.or.jp/~vj5y-tkur/ft8/wsjtx_31improved_article_ko.html) | [🇵🇹 Português](https://www.asahi-net.or.jp/~vj5y-tkur/ft8/wsjtx_31improved_article_pt.html) | [🇮🇹 Italiano](https://www.asahi-net.or.jp/~vj5y-tkur/ft8/wsjtx_31improved_article_it.html) | [🇳🇱 Nederlands](https://www.asahi-net.or.jp/~vj5y-tkur/ft8/wsjtx_31improved_article_nl.html) | [🇷🇺 Русский](https://www.asahi-net.or.jp/~vj5y-tkur/ft8/wsjtx_31improved_article_ru.html) | [🇵🇱 Polski](https://www.asahi-net.or.jp/~vj5y-tkur/ft8/wsjtx_31improved_article_pl.html) | [🇹🇷 Türkçe](https://www.asahi-net.or.jp/~vj5y-tkur/ft8/wsjtx_31improved_article_tr.html) | [🇸🇪 Svenska](https://www.asahi-net.or.jp/~vj5y-tkur/ft8/wsjtx_31improved_article_sv.html) | [🇮🇩 Bahasa Indonesia](https://www.asahi-net.or.jp/~vj5y-tkur/ft8/wsjtx_31improved_article_id.html)
 
 この記事では、Decode Start、段階的デコード、STD / MTDの関係、FT8サイクル内でのCPUリソース配分、実運用でのデコーダー設定などを扱っています。
 
@@ -460,10 +463,11 @@ Logにはcallsign、locator、frequency、timestamp、内部operating stateな�
 
 ## 開発背景・関連記事
 
-### Decoder解析
+### Decoder解析 — 16言語
 
-- **WSJT-X 3.1 improved の FT8 デコーダー設定を理解する — 日本語**  
-  https://www.asahi-net.or.jp/~vj5y-tkur/ft8/wsjtx_31improved_article_ja.html
+**WSJT-X 3.1 improved の FT8 デコーダー設定を理解する**
+
+[🇬🇧 English](https://www.asahi-net.or.jp/~vj5y-tkur/ft8/wsjtx_31improved_article_en.html) | [🇯🇵 日本語](https://www.asahi-net.or.jp/~vj5y-tkur/ft8/wsjtx_31improved_article_ja.html) | [🇫🇷 Français](https://www.asahi-net.or.jp/~vj5y-tkur/ft8/wsjtx_31improved_article_fr.html) | [🇩🇪 Deutsch](https://www.asahi-net.or.jp/~vj5y-tkur/ft8/wsjtx_31improved_article_de.html) | [🇪🇸 Español](https://www.asahi-net.or.jp/~vj5y-tkur/ft8/wsjtx_31improved_article_es.html) | [🇨🇳 简体中文](https://www.asahi-net.or.jp/~vj5y-tkur/ft8/wsjtx_31improved_article_zh-cn.html) | [🇹🇼 繁體中文](https://www.asahi-net.or.jp/~vj5y-tkur/ft8/wsjtx_31improved_article_zh-tw.html) | [🇰🇷 한국어](https://www.asahi-net.or.jp/~vj5y-tkur/ft8/wsjtx_31improved_article_ko.html) | [🇵🇹 Português](https://www.asahi-net.or.jp/~vj5y-tkur/ft8/wsjtx_31improved_article_pt.html) | [🇮🇹 Italiano](https://www.asahi-net.or.jp/~vj5y-tkur/ft8/wsjtx_31improved_article_it.html) | [🇳🇱 Nederlands](https://www.asahi-net.or.jp/~vj5y-tkur/ft8/wsjtx_31improved_article_nl.html) | [🇷🇺 Русский](https://www.asahi-net.or.jp/~vj5y-tkur/ft8/wsjtx_31improved_article_ru.html) | [🇵🇱 Polski](https://www.asahi-net.or.jp/~vj5y-tkur/ft8/wsjtx_31improved_article_pl.html) | [🇹🇷 Türkçe](https://www.asahi-net.or.jp/~vj5y-tkur/ft8/wsjtx_31improved_article_tr.html) | [🇸🇪 Svenska](https://www.asahi-net.or.jp/~vj5y-tkur/ft8/wsjtx_31improved_article_sv.html) | [🇮🇩 Bahasa Indonesia](https://www.asahi-net.or.jp/~vj5y-tkur/ft8/wsjtx_31improved_article_id.html)
 
 ---
 
