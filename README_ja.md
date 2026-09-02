@@ -19,7 +19,7 @@ https://github.com/jp1lrt/wsjtx-avelag/releases/tag/20260901A-REB522-P6
 
 ## なぜJP1LRT Editionを作ったのか
 
-私は **Yoshi / JP1LRT** です。
+私は **津久浦慶治 / JP1LRT** です。
 
 **JTDXのauthorized beta tester（公認ベータテスター）**であり、**日本語ローカライズ担当**でもあります。
 
