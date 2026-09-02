@@ -1,5 +1,7 @@
 # WSJT-X Improved JP1LRT Edition
 
+🌐 **Languages:** English | [日本語](https://github.com/jp1lrt/wsjtx-avelag/blob/main/README_ja.md)
+
 [![Status](https://img.shields.io/badge/status-Public%20Release%20Candidate-orange)](https://github.com/jp1lrt/wsjtx-avelag/releases/tag/20260901A-REB522-P6)
 [![Current release](https://img.shields.io/badge/release-20260901A--REB522--P6-blue)](https://github.com/jp1lrt/wsjtx-avelag/releases/tag/20260901A-REB522-P6)
 ![User Guide](https://img.shields.io/badge/User%20Guide-Edition%201.8%20%7C%2016%20languages-brightgreen)
