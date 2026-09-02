@@ -96,10 +96,33 @@ The priority is not simply to add more buttons or more automation. The goal is t
 - **High-precision own-station Grid Locator**  
   Up to 10 characters can be entered for reporting and services that can use higher locator precision.
 
+- **Expanded `ALLCALL7.TXT` support**  
+  The original ALLCALL7 handling was expanded to a **250,000-entry-class capacity**.  
+  The P6 / P6-AL package currently includes an `ALLCALL7.TXT` dataset containing **218,100 unique callsigns**.  
+  This substantially broadens local callsign lookup and the related display/classification functions. It does **not** modify the FT8 decoder or over-the-air messages.
+
 - **Detailed diagnostics**  
   Optional JP1LRT diagnostic information can be recorded in `ALL.TXT` to help reproduce and analyze difficult operating-state problems.
 
 This is deliberately an **additive** design: the intention is to enhance everyday FT8/FT4 operation without taking away the normal WSJT-X Improved operating capabilities.
+
+---
+
+## Expanded ALLCALL7.TXT callsign database
+
+JP1LRT Edition also expands support for the local `ALLCALL7.TXT` callsign database.
+
+The internal array/read capacity was increased to a **250,000-entry class**, and the P6 / P6-AL distribution currently contains **218,100 unique callsigns**.
+
+This larger dataset improves the coverage of local callsign lookup and the display/classification functions that depend on that information.
+
+`ALLCALL7.TXT` is a supporting local data file. Expanding it does **not** change the FT8 decoder itself, transmitted FT8/FT4 messages, AutoSeq QSO-ownership protections, or PSK Reporter behavior.
+
+For the P6 / P6-AL packaged dataset:
+
+`SHA-256: 676f1a402ead5944fccd88656427ae9f016dfdfa58b7fdc3c8e0b7ac88033b18`
+
+Keep `ALLCALL7.TXT` beside `wsjtx.exe`.
 
 ---
 
@@ -270,27 +293,6 @@ Please review logs before sharing them publicly. They may contain callsigns, loc
 
 - **Understanding FT8 Decoder Settings in WSJT-X 3.1 improved — English**  
   https://www.asahi-net.or.jp/~vj5y-tkur/ft8/wsjtx_31improved_article_en.html
-
-### JP1LRT blog — development notes / background
-
-- 2026-08-18  
-  https://jp1lrt.asablo.jp/blog/2026/08/18/9871594
-
-- 2026-08-07  
-  https://jp1lrt.asablo.jp/blog/2026/08/07/9869636
-
-- 2026-05-16  
-  https://jp1lrt.asablo.jp/blog/2026/05/16/9854759
-
-- 2026-03-17  
-  https://jp1lrt.asablo.jp/blog/2026/03/17/9842642
-
-### Related posts on X
-
-- https://x.com/JP1LRT_/status/2093349864067506189
-- https://x.com/JP1LRT_/status/2091531034001330434
-- https://x.com/JP1LRT_/status/2042862234498666940
-- https://x.com/JP1LRT_/status/2041459434300518906
 
 ---
 
