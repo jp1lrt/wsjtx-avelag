@@ -31,6 +31,20 @@ That led to a very simple idea:
 
 That idea became **WSJT-X Improved JP1LRT Edition**.
 
+### It actually started with Avg/Lag
+
+The project did not begin as a large-scale attempt to redesign operating logic.
+
+The **first JP1LRT modification was Avg/Lag** — a timing aid that observes received decode `DT` values and presents a robust average and cycle-boundary lag indication in the status area.
+
+That small experiment became the starting point.
+
+From there, the project gradually expanded into internal logical-time Sync support, CQ RUN and AutoSeq ownership logic, Wanted/Hunting, safer manual takeover, Terminal Hold, DF handling, directed-CQ safeguards, expanded callsign data, diagnostics, and the other operating features now found in P6 / P6-AL.
+
+So the current edition grew organically from a simple practical question:
+
+> **Can I make the information and operating flow I want during everyday FT8/FT4 operation available directly inside WSJT-X Improved?**
+
 The goal is **not** to turn WSJT-X Improved into JTDX, and not to remove or replace the capabilities that already exist in WSJT-X / WSJT-X Improved.
 
 Instead, JP1LRT Edition tries to:
@@ -59,6 +73,9 @@ JP1LRT Edition is designed around **real operating flow**.
 The priority is not simply to add more buttons or more automation. The goal is to make automatic operation **predictable**, while protecting the operator's intent and the state of an active QSO.
 
 ### Key operating ideas
+
+- **Avg/Lag and optional internal Sync — where the project started**  
+  Avg/Lag derives timing information from received decode `DT` values. `Avg=` shows a robust average of usable DT values, while `Lag=` provides a signed cycle-boundary timing indication. It is a status/timing aid and does **not** modify the FT8 decoder core. The later optional internal Sync function grew from this timing work.
 
 - **AutoSeq 2 / AutoSeq 3**  
   Priority-based CQ RUN caller selection inspired by the operating style familiar to JTDX users.
@@ -105,6 +122,24 @@ The priority is not simply to add more buttons or more automation. The goal is t
   Optional JP1LRT diagnostic information can be recorded in `ALL.TXT` to help reproduce and analyze difficult operating-state problems.
 
 This is deliberately an **additive** design: the intention is to enhance everyday FT8/FT4 operation without taking away the normal WSJT-X Improved operating capabilities.
+
+---
+
+## How the project grew
+
+The development sequence is part of the character of this edition:
+
+1. **Avg/Lag and internal timing work** — the original starting point.
+2. **CQ RUN / AutoSeq ownership and QSO-state protection.**
+3. **Wanted callsign, prefix and grid priority.**
+4. **Wanted Pounce / Hunting and Orange-vs-Blue action separation.**
+5. **Terminal Hold and FT8/FT4 terminal-message arbitration.**
+6. **Rx DF following, deferred/manual takeover protection and stale-target safeguards.**
+7. **Best S&P language-independent priority handling and directed-CQ safety.**
+8. **Higher-precision Grid Locator support, expanded `ALLCALL7.TXT`, diagnostics and Public RC packaging.**
+9. **P5/P6 Hunting-return refinements**, including the P6 three-report no-reply return to Hunting.
+
+What began with one timing display gradually became a broader attempt to combine the **decoder/platform I liked in WSJT-X Improved** with the **operating flow I was accustomed to in JTDX**.
 
 ---
 
