@@ -4,7 +4,7 @@
 
 [![Status](https://img.shields.io/badge/status-Public%20Release%20Candidate-orange)](https://github.com/jp1lrt/wsjtx-avelag/releases/tag/20260901A-REB522-P6)
 [![Current release](https://img.shields.io/badge/release-20260901A--REB522--P6-blue)](https://github.com/jp1lrt/wsjtx-avelag/releases/tag/20260901A-REB522-P6)
-![User Guide](https://img.shields.io/badge/User%20Guide-Edition%201.8%20%7C%2016%20languages-brightgreen)
+![User Guide](https://img.shields.io/badge/User%20Guide-Edition%201.9%20%7C%2016%20languages-brightgreen)
 
 **WSJT-X Improved本来の機能を維持しながら、より賢いCQ RUN、Wanted/Hunting、安全なQSO遷移、そして実運用を重視したFT8/FT4ワークフローを追加する、JTDXの運用思想に着想を得た追加運用レイヤーです。**
 
@@ -226,6 +226,9 @@ Release historyを見ると、JP1LRT Editionが**最初から完成形として�
 17. **9月1日 — P6 / P6-AL**  
     P6ではWanted-Pounce no-reply ruleを追加。レポートを正確に3回送っても応答がなければ、4回目を送らず、自動CQにも移行せず、安全にHuntingへ戻ります。User Guide Edition 1.8はその後**16言語**に到達しました。
 
+18. **9月7日 — User Guide Edition 1.9**  
+    16言語のUser Guideを更新し、推奨デコーダー初期設定、`CQ: AutoSeq 2`の場所、LoTW / CTY / US Callsign States / CALL3のデータ更新、自前CALL3を維持する際の注意、トラブルシューティング、そしてP6のWanted-Pounce無応答処理に関する診断マーカーを追加しました。
+
 このように、最初はひとつの**Avg/Lag display experiment**だったものが、少しずつ、**WSJT-X Improvedで気に入ったdecoder/platform**と、**JTDXで慣れ親しんだoperating flowとinformation density**を組み合わせる試みへ成長しました。
 
 ---
@@ -299,10 +302,11 @@ P6 / P6-AL packaged dataset:
 | Status | **Public Release Candidate** |
 | Base | WSJT-X Improved `3.1.0 / 260522` |
 | Base date | 2026年5月22日 |
-| User Guide | Edition 1.8 |
+| User Guide | Edition 1.9 |
 | Guide languages | **16** |
 | Windows builds | Standard GUI / AL GUI |
 | Source | complete source bundle提供 |
+| Documentation update | 2026年9月7日 — User Guide Edition 1.9 |
 
 ### Standard版とAL版
 
@@ -365,7 +369,7 @@ https://github.com/jp1lrt/wsjtx-avelag/releases/tag/20260901A-REB522-P6
 
 ---
 
-## User Guide Edition 1.8 — 16言語
+## User Guide Edition 1.9 — 16言語
 
 P6 / P6-ALのUser Guideは以下の16言語で用意しています。
 
@@ -386,9 +390,9 @@ P6 / P6-ALのUser Guideは以下の16言語で用意しています。
 - 🇸🇪 スウェーデン語
 - 🇮🇩 インドネシア語
 
-**English Edition 1.8を、多言語版の意味上のmaster**としています。
+**English Edition 1.9を、多言語版の意味上のmaster**としています。
 
-User Guideでは、installation、Standard / ALの違い、AutoSeq 2/3、Wanted/Hunting、Terminal Hold、manual takeover、Best S&P、DF behavior、diagnostics、known limitations、Public RC precautionsなどを解説しています。
+User Guideでは、installation、Standard / ALの違い、AutoSeq 2/3、Wanted/Hunting、Terminal Hold、manual takeover、Best S&P、DF behavior、diagnostics、known limitations、Public RC precautionsなどを解説しています。Edition 1.9ではさらに、推奨デコーダー初期設定、`CQ: AutoSeq 2`の場所、LoTW / CTY / US Callsign States / CALL3の更新方法、自分で育てたCALL3を維持する際の注意、トラブルシューティング、P6のWanted-Pounce無応答診断マーカーを追加しました。
 
 すべてのcurrent guide fileはP6 release pageから入手できます。
 
