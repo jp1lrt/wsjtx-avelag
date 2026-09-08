@@ -4,7 +4,7 @@
 
 [![Status](https://img.shields.io/badge/status-Public%20Release%20Candidate-orange)](https://github.com/jp1lrt/wsjtx-avelag/releases/tag/20260901A-REB522-P6)
 [![Current release](https://img.shields.io/badge/release-20260901A--REB522--P6-blue)](https://github.com/jp1lrt/wsjtx-avelag/releases/tag/20260901A-REB522-P6)
-![User Guide](https://img.shields.io/badge/User%20Guide-Edition%201.9%20%7C%2016%20languages-brightgreen)
+![User Guide](https://img.shields.io/badge/User%20Guide-Edition%201.10%20%7C%2016%20languages-brightgreen)
 
 **A JTDX-inspired operating layer for WSJT-X Improved — preserving the original capabilities while adding smarter CQ RUN, Wanted/Hunting, safer QSO transitions, and operator-focused FT8/FT4 workflow.**
 
@@ -12,7 +12,7 @@
 > **Base:** WSJT-X Improved `3.1.0 / 260522` (22 May 2026)  
 > **This is not a WSJT-X Improved 3.2.0-based release.**
 
-**Latest release:**  https://github.com/jp1lrt/wsjtx-avelag/blob/main/README_ja.md
+**Latest release:**  
 https://github.com/jp1lrt/wsjtx-avelag/releases/tag/20260901A-REB522-P6
 
 ---
@@ -122,7 +122,7 @@ The priority is not simply to add more buttons or more automation. The goal is t
   When current LoTW-user data is available, LoTW users are marked explicitly in the activity display. Country/entity, worked/B4 state, Wanted/highlight status and other station attributes can also be shown without depending on the line being a CQ.
 
 - **Improved Wide Graph readability**  
-  The Wide Graph / waterfall display was refined for practical everyday use. Contrast uses JTDX-derived median-noise normalization, with **Gain -11 / Zero 7** as practical starting values. I also corrected the Wide Graph layout so the clock text is no longer clipped and remains properly readable.
+  The Wide Graph / waterfall display was refined for practical everyday use. Contrast uses JTDX-derived median-noise normalization. For my normal JP1LRT operating setup, **Gain -11 / Zero 7** have proved to be practical starting values; they are recommendations, not software defaults. I also corrected the Wide Graph layout so the clock text is no longer clipped and remains properly readable.
 
 - **High-precision own-station Grid Locator**  
   Up to 10 characters can be entered for reporting and services that can use higher locator precision.
@@ -221,6 +221,9 @@ The release history shows that JP1LRT Edition was **not designed all at once**. 
 18. **7 September — User Guide Edition 1.9.**  
     The 16-language guide set was expanded with recommended initial decoder settings, clearer guidance on `CQ: AutoSeq 2`, LoTW / CTY / US Callsign States / CALL3 data maintenance, operator-maintained CALL3 preservation advice, troubleshooting guidance, and the P6 Wanted-Pounce no-reply diagnostic markers in Appendix A.
 
+19. **8 September — User Guide Edition 1.10.**  
+    A documentation-only update for the same P6 / P6-AL Public RC. Edition 1.10 clarifies the LoTW `●` marker, explicitly frames Fox/Hound / MSHV compound-message reformatting as a **display-only** feature, documents the **17 currently reachable AutoSeq candidate-priority categories** and exact tie-break sequence, clarifies **Auto Tx Off** and deferred manual-click behavior, adds symptom-based AutoSeq 2 troubleshooting, and includes `CQRUN_MANUAL_CLICK_DEFERRED_FIRE` in Appendix A. The English Edition 1.10 is the frozen semantic master for all 15 translated editions.
+
 What began as a small **Avg/Lag display experiment** therefore grew, step by step, into an attempt to combine the **decoder/platform I liked in WSJT-X Improved** with the **operating flow and information density I was accustomed to in JTDX**.
 
 ---
@@ -254,7 +257,7 @@ The explicit **LoTW-user marker** is particularly useful because LoTW status is 
 
 The Wide Graph was also adjusted for better readability.
 
-The waterfall contrast uses **JTDX-derived median-noise normalization**, and **Gain -11 / Zero 7** are practical starting values for the JP1LRT Edition.
+The waterfall contrast uses **JTDX-derived median-noise normalization**. For my normal JP1LRT operating setup, **Gain -11 / Zero 7** have proved to be practical starting values; they are recommendations, not software defaults.
 
 The Wide Graph layout itself was refined as well. In the upstream layout, the clock text could be partially clipped; the JP1LRT layout was adjusted so the clock remains fully visible and easier to read during normal operation.
 
@@ -294,11 +297,11 @@ Keep `ALLCALL7.TXT` beside `wsjtx.exe`.
 | Status | **Public Release Candidate** |
 | Base | WSJT-X Improved `3.1.0 / 260522` |
 | Base date | 22 May 2026 |
-| User Guide | Edition 1.9 |
+| User Guide | Edition 1.10 |
 | Guide languages | **16** |
 | Windows builds | Standard GUI / AL GUI |
 | Source | Complete source bundles provided |
-| Documentation update | 7 September 2026 — User Guide Edition 1.9 |
+| Documentation update | 8 September 2026 — User Guide Edition 1.10 |
 
 ### Standard and AL
 
@@ -357,7 +360,7 @@ https://github.com/jp1lrt/wsjtx-avelag/releases/tag/20260901A-REB522-P6
 
 ---
 
-## User Guide Edition 1.9 — 16 languages
+## User Guide Edition 1.10 — 16 languages
 
 The P6 / P6-AL User Guide is available in:
 
@@ -378,9 +381,9 @@ The P6 / P6-AL User Guide is available in:
 - 🇸🇪 Swedish
 - 🇮🇩 Indonesian
 
-The English Edition 1.9 is the semantic master for the multilingual guides.
+The English Edition 1.10 is the frozen semantic master for the multilingual guides.
 
-The guides cover installation, Standard / AL differences, AutoSeq 2/3, Wanted/Hunting, Terminal Hold, manual takeover, Best S&P, DF behavior, diagnostics, known limitations, and Public RC precautions. Edition 1.9 also adds recommended initial decoder settings, the location of `CQ: AutoSeq 2`, guidance for keeping LoTW / CTY / US Callsign States / CALL3 data current, advice for preserving an operator-maintained CALL3 file, and additional P6 diagnostic markers.
+The guides cover installation, Standard / AL differences, AutoSeq 2/3, Wanted/Hunting, Terminal Hold, manual takeover, Best S&P, DF behavior, diagnostics, known limitations, and Public RC precautions. Edition 1.10 retains the practical setup and reference-data guidance added in 1.9, and further clarifies the LoTW `●` marker, the display-only Fox/Hound / MSHV compound-message presentation, the 17 currently reachable AutoSeq candidate-priority categories and exact tie-break sequence, Auto Tx Off, deferred manual-click behavior, symptom-based AutoSeq 2 troubleshooting, and the `CQRUN_MANUAL_CLICK_DEFERRED_FIRE` diagnostic marker.
 
 All current guide files are available from the P6 release page:
 
