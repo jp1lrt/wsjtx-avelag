@@ -4,7 +4,7 @@
 
 [![Status](https://img.shields.io/badge/status-Public%20Release%20Candidate-orange)](https://github.com/jp1lrt/wsjtx-avelag/releases/tag/20260901A-REB522-P6)
 [![Current release](https://img.shields.io/badge/release-20260901A--REB522--P6-blue)](https://github.com/jp1lrt/wsjtx-avelag/releases/tag/20260901A-REB522-P6)
-![User Guide](https://img.shields.io/badge/User%20Guide-Edition%201.9%20%7C%2016%20languages-brightgreen)
+![User Guide](https://img.shields.io/badge/User%20Guide-Edition%201.10%20%7C%2016%20languages-brightgreen)
 
 **WSJT-X Improved本来の機能を維持しながら、より賢いCQ RUN、Wanted/Hunting、安全なQSO遷移、そして実運用を重視したFT8/FT4ワークフローを追加する、JTDXの運用思想に着想を得た追加運用レイヤーです。**
 
@@ -130,7 +130,7 @@ JP1LRT Editionは、**実際の運用フロー**を中心に設計していま�
   最新のLoTW-user dataが利用できる場合、LoTW usersをactivity display上で明示的に表示します。country/entity、worked/B4、Wanted/highlight、その他の局属性も、CQ行であるかどうかに依存せず表示できます。
 
 - **見やすくしたWide Graph**  
-  Wide Graph / waterfall表示を実運用向けに調整しています。contrastにはJTDX由来のmedian-noise normalizationを使い、**Gain -11 / Zero 7**を実用的な開始値としています。また、Wide Graphの時計文字が欠けていたレイアウトも調整し、時計を完全に読めるようにしています。
+  Wide Graph / waterfall表示を実運用向けに調整しています。contrastにはJTDX由来のmedian-noise normalizationを使っています。私が通常JP1LRT Editionを運用する際には、**Gain -11 / Zero 7**が実用的な開始値として良好に機能しています。これは**推奨値であり、software defaultではありません**。また、Wide Graphの時計文字が欠けていたレイアウトも調整し、時計を完全に読めるようにしています。
 
 - **高精度の自局Grid Locator**  
   レポーティングなど、高精度Locatorを利用できるサービス向けに、最大10文字の自局Grid Locatorを入力できます。
@@ -229,6 +229,9 @@ Release historyを見ると、JP1LRT Editionが**最初から完成形として�
 18. **9月7日 — User Guide Edition 1.9**  
     16言語のUser Guideを更新し、推奨デコーダー初期設定、`CQ: AutoSeq 2`の場所、LoTW / CTY / US Callsign States / CALL3のデータ更新、自前CALL3を維持する際の注意、トラブルシューティング、そしてP6のWanted-Pounce無応答処理に関する診断マーカーを追加しました。
 
+19. **9月8日 — User Guide Edition 1.10**  
+    同じP6 / P6-AL Public RCを対象とする**documentation-only update**です。LoTW `●` markerの意味、Fox/Hound / MSHV compound-messageの再整形が**display-only機能**であること、**現在到達可能な17個のAutoSeq candidate-priority category**と正確なtie-break順序、**Auto Tx Off**とdeferred manual-clickの動作を明確化しました。さらに、症状ベースのAutoSeq 2 troubleshootingと、Appendix Aの`CQRUN_MANUAL_CLICK_DEFERRED_FIRE` markerを追加しました。**English Edition 1.10をfreeze済みsemantic master**として、残り15言語へ展開しています。
+
 このように、最初はひとつの**Avg/Lag display experiment**だったものが、少しずつ、**WSJT-X Improvedで気に入ったdecoder/platform**と、**JTDXで慣れ親しんだoperating flowとinformation density**を組み合わせる試みへ成長しました。
 
 ---
@@ -262,7 +265,7 @@ JP1LRT Editionでは、局属性をCQ lineだけに限定しません。report e
 
 Wide Graphも見やすさを重視して調整しています。
 
-Waterfall contrastには**JTDX-derived median-noise normalization**を使用し、JP1LRT Editionでは**Gain -11 / Zero 7**を実用的な開始値としています。
+Waterfall contrastには**JTDX-derived median-noise normalization**を使用しています。私が通常JP1LRT Editionを運用する際には、**Gain -11 / Zero 7**が実用的な開始値として良好に機能しています。これは**推奨値であり、software defaultではありません**。
 
 Wide Graph layout自体も調整しました。upstream layoutでは時計文字の一部が欠けて見えることがありましたが、JP1LRT layoutでは時計が完全に表示され、通常運用中でも読みやすくなるよう修正しています。
 
@@ -302,11 +305,11 @@ P6 / P6-AL packaged dataset:
 | Status | **Public Release Candidate** |
 | Base | WSJT-X Improved `3.1.0 / 260522` |
 | Base date | 2026年5月22日 |
-| User Guide | Edition 1.9 |
+| User Guide | Edition 1.10 |
 | Guide languages | **16** |
 | Windows builds | Standard GUI / AL GUI |
 | Source | complete source bundle提供 |
-| Documentation update | 2026年9月7日 — User Guide Edition 1.9 |
+| Documentation update | 2026年9月8日 — User Guide Edition 1.10 |
 
 ### Standard版とAL版
 
@@ -369,7 +372,7 @@ https://github.com/jp1lrt/wsjtx-avelag/releases/tag/20260901A-REB522-P6
 
 ---
 
-## User Guide Edition 1.9 — 16言語
+## User Guide Edition 1.10 — 16言語
 
 P6 / P6-ALのUser Guideは以下の16言語で用意しています。
 
@@ -390,9 +393,9 @@ P6 / P6-ALのUser Guideは以下の16言語で用意しています。
 - 🇸🇪 スウェーデン語
 - 🇮🇩 インドネシア語
 
-**English Edition 1.9を、多言語版の意味上のmaster**としています。
+**English Edition 1.10を、16言語版のfreeze済みsemantic master**としています。
 
-User Guideでは、installation、Standard / ALの違い、AutoSeq 2/3、Wanted/Hunting、Terminal Hold、manual takeover、Best S&P、DF behavior、diagnostics、known limitations、Public RC precautionsなどを解説しています。Edition 1.9ではさらに、推奨デコーダー初期設定、`CQ: AutoSeq 2`の場所、LoTW / CTY / US Callsign States / CALL3の更新方法、自分で育てたCALL3を維持する際の注意、トラブルシューティング、P6のWanted-Pounce無応答診断マーカーを追加しました。
+User Guideでは、installation、Standard / ALの違い、AutoSeq 2/3、Wanted/Hunting、Terminal Hold、manual takeover、Best S&P、DF behavior、diagnostics、known limitations、Public RC precautionsなどを解説しています。Edition 1.10では、1.9で追加した実用的な初期設定とreference-data maintenance guidanceを引き継ぎつつ、LoTW `●` marker、Fox/Hound / MSHV compound-messageの**display-only**表示、現在到達可能な17個のAutoSeq candidate-priority categoryと正確なtie-break順序、Auto Tx Off、deferred manual-click、症状ベースのAutoSeq 2 troubleshooting、`CQRUN_MANUAL_CLICK_DEFERRED_FIRE` diagnostic markerをさらに明確化・追加しました。
 
 すべてのcurrent guide fileはP6 release pageから入手できます。
 
