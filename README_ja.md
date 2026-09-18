@@ -1,23 +1,36 @@
-# WSJT-X Improved JP1LRT Edition
+# JP1LRT 派生プロジェクト — 新名称検討中
 
 🌐 **言語:** [English](README.md) | 日本語
 
-[![Status](https://img.shields.io/badge/status-Public%20Release%20Candidate-orange)](https://github.com/jp1lrt/wsjtx-avelag/releases/tag/20260901A-REB522-P6)
-[![Current release](https://img.shields.io/badge/release-20260901A--REB522--P6-blue)](https://github.com/jp1lrt/wsjtx-avelag/releases/tag/20260901A-REB522-P6)
-![User Guide](https://img.shields.io/badge/User%20Guide-Edition%201.10%20%7C%2016%20languages-brightgreen)
+![Status](https://img.shields.io/badge/status-Public%20Downloads%20Suspended-red)
+![Project](https://img.shields.io/badge/project-Rename%20in%20Progress-yellow)
+![Development](https://img.shields.io/badge/development-Continuing-brightgreen)
 
-**WSJT-X Improved本来の機能を維持しながら、より賢いCQ RUN、Wanted/Hunting、安全なQSO遷移、そして実運用を重視したFT8/FT4ワークフローを追加する、JTDXの運用思想に着想を得た追加運用レイヤーです。**
+## ⚠️ 公開ダウンロードを一時停止しています
 
-> **現在のPublic Release Candidate:** `20260901A-REB522-P6 / P6-AL`  
-> **ベース:** WSJT-X Improved `3.1.0 / 260522`（2026年5月22日版）  
-> **WSJT-X Improved 3.2.0ベースのリリースではありません。**
+WSJT-X upstream側から、派生版については **WSJT-Xとは独立したプロジェクト名称を使用してほしい** との要請を受けています。
 
-**最新リリース:**  
-https://github.com/jp1lrt/wsjtx-avelag/releases/tag/20260901A-REB522-P6
+この要請を尊重し、現在、本プロジェクトの新しい独立名称およびソフトウェアとしての識別名称を検討しています。
+
+**新名称と新しいプロジェクト識別が確定するまで、バイナリの一般公開・ダウンロードを一時停止します。**
+
+開発そのものは継続しています。公開配布を停止している間も、技術実験、ソース開発、回帰試験、限定的なプライベートテストを継続する場合があります。
+
+今回の公開停止は、**名称およびプロジェクト識別の整理**を目的とするものです。**新たな重大不具合や安全上の問題が判明したためにダウンロードを停止したものではありません。**
+
+以下に **「WSJT-X Improved JP1LRT Edition」** という名称が残っている箇所は、これまでの開発経緯や過去に公開したbuildを説明するための歴史的記述です。これは将来の正式なプロジェクト名称を意味しません。
+
+> **一般公開状況:** 一時停止中  
+> **開発状況:** 継続中  
+> **公開停止前の最終Public Build:** `20260901A-REB522-P6 / P6-AL`  
+> **そのbuildのhistorical base:** WSJT-X Improved `3.1.0 / 260522`（2026年5月22日版）  
+> **名称変更告知更新:** 2026年9月18日
+
+今後の公開形態はまだ確定していません。将来、広く一般公開する形で再開する可能性もあれば、限定配布の技術プロジェクト、あるいは主としてプライベートな開発へ移行する可能性もあります。
 
 ---
 
-## なぜJP1LRT Editionを作ったのか
+## なぜこのプロジェクトを作ったのか
 
 私は **津久浦慶治 / JP1LRT** です。
 
@@ -33,7 +46,7 @@ https://github.com/jp1lrt/wsjtx-avelag/releases/tag/20260901A-REB522-P6
 
 > **「WSJT-X Improvedのデコーダーとプラットフォームを使いながら、JTDXに近い感覚で運用できたらどうだろう？」**
 
-これが、**WSJT-X Improved JP1LRT Edition**の始まりです。
+これが、後に暫定的に **WSJT-X Improved JP1LRT Edition** という名称で公開していた派生プロジェクトの始まりです。
 
 ### 実際の始まりはAvg/Lagでした
 
@@ -45,13 +58,13 @@ https://github.com/jp1lrt/wsjtx-avelag/releases/tag/20260901A-REB522-P6
 
 そこから、internal logical-time Sync、CQ RUNとAutoSeqのownership logic、Wanted/Hunting、安全なmanual takeover、Terminal Hold、DF handling、directed-CQ safeguards、拡張callsign data、diagnostics、そして現在P6 / P6-ALに含まれる各種運用機能へと発展していきました。
 
-つまり、現在のJP1LRT Editionは、次のような単純な問いから自然に育ってきたものです。
+つまり、この派生プロジェクトは、次のような単純な問いから自然に育ってきたものです。
 
 > **「普段FT8/FT4を運用するとき、自分が欲しい情報と運用フローをWSJT-X Improvedの中に直接持ち込めないだろうか？」**
 
 目的は、WSJT-X ImprovedをJTDXそのものに変えることではありません。また、WSJT-X / WSJT-X Improvedに元々存在する機能を削除したり、置き換えたりすることでもありません。
 
-JP1LRT Editionが目指しているのは、
+このプロジェクトが目指しているのは、
 
 - **すでにうまく動いているものは、そのまま残す**
 - **WSJT-X Improved本来の能力を維持する**
@@ -77,9 +90,9 @@ WSJT-X Improved 3.1のデコーダーについて、なぜ私が強く興味を�
 
 ---
 
-## JP1LRT Editionは何が違うのか？
+## この派生版は何が違うのか？
 
-JP1LRT Editionは、**実際の運用フロー**を中心に設計しています。
+この派生版は、**実際の運用フロー**を中心に設計しています。
 
 目的は単純にボタンを増やすことでも、自動化を増やすことでもありません。
 
@@ -141,7 +154,7 @@ JP1LRT Editionは、**実際の運用フロー**を中心に設計していま�
 - **詳細なdiagnostics**  
   必要に応じてJP1LRT独自の診断情報を`ALL.TXT`へ記録できます。複雑なstate transition問題の再現・解析に利用できます。
 
-JP1LRT Editionは、意図的に**additive（追加型）**として設計しています。
+この派生版は、意図的に**additive（追加型）**として設計しています。
 
 元のWSJT-X Improvedの通常機能を失わせるのではなく、**日常のFT8/FT4運用を、その上からより使いやすくする**ことを目的としています。
 
@@ -297,19 +310,21 @@ P6 / P6-AL packaged dataset:
 
 ---
 
-## 現在のリリース：P6 / P6-AL
+## 公開停止前の最終build — P6 / P6-AL（historical reference）
 
 | 項目 | 現在の内容 |
 |---|---|
 | Release | `20260901A-REB522-P6 / P6-AL` |
-| Status | **Public Release Candidate** |
+| 公開当時のStatus | **Public Release Candidate** |
 | Base | WSJT-X Improved `3.1.0 / 260522` |
 | Base date | 2026年5月22日 |
 | User Guide | Edition 1.10 |
 | Guide languages | **16** |
 | Windows builds | Standard GUI / AL GUI |
-| Source | complete source bundle提供 |
+| Source | 公開binaryに対応するcomplete source bundleを提供 |
 | Documentation update | 2026年9月8日 — User Guide Edition 1.10 |
+
+**この表はhistorical / technical referenceとして残しています。現在のdownload offerではありません。**
 
 ### Standard版とAL版
 
@@ -349,32 +364,35 @@ Wanted Pounce / Huntingから開始したQSOで、相手から続きの応答が
 
 ---
 
-## ダウンロードとSHA-256
+## 公開ダウンロードを一時停止しています
 
-### Windows GUI packages
+現在、このREADMEから提供している**一般向けダウンロードはありません**。
 
-| Build | File | SHA-256 |
+本プロジェクトは名称変更と今後の公開形態の整理を行っているため、バイナリの一般公開を一時停止しています。
+
+以下の値は、公開停止前に配布していた最後のP6 / P6-AL packageについての**historical verification record**としてのみ残しています。
+
+### 過去のWindows GUI package SHA-256
+
+| Build | Historical file | SHA-256 |
 |---|---|---|
 | Standard GUI | `WSJT-X_20260901A-REB522-P6_win64.zip` | `d69ef54fb7d10feb3a7bc9620497eda8ec40c700f08f4d5302e8e016a02e992b` |
 | AL GUI | `WSJT-X_20260901A-REB522-P6-AL_win64.zip` | `658db59666b89ae4884365e5ba55087b234b29aaa0cf7950fee80fcb2ab800e7` |
 
-### Source bundles
+### 過去の対応source bundle SHA-256
 
-| Build | File | SHA-256 |
+| Build | Historical file | SHA-256 |
 |---|---|---|
 | Standard source | `WSJT-X_20260901A-REB522-P6_source_bundle.zip` | `86e53df77bacaa93fc16bed15aec8e8ae1529231df16873486dacdb619803e2c` |
 | AL source | `WSJT-X_20260901A-REB522-P6-AL_source_bundle.zip` | `8ecb9f4d6ec4763a2eb03f7d33a1971466263b7435a7efc491e56b8365a1c1f4` |
 
-各fileに対応する`.sha256` sidecarも用意しています。
-
-**Download:**  
-https://github.com/jp1lrt/wsjtx-avelag/releases/tag/20260901A-REB522-P6
+これらのhashを掲載していることは、対応packageを現在一般向けに配布していることを意味しません。
 
 ---
 
-## User Guide Edition 1.10 — 16言語
+## User Guide Edition 1.10 — 16言語（historical documentation）
 
-P6 / P6-ALのUser Guideは以下の16言語で用意しています。
+P6 / P6-ALのUser Guideは、公開当時以下の16言語で提供していました。
 
 - 🇯🇵 日本語
 - 🇬🇧 英語
@@ -397,17 +415,15 @@ P6 / P6-ALのUser Guideは以下の16言語で用意しています。
 
 User Guideでは、installation、Standard / ALの違い、AutoSeq 2/3、Wanted/Hunting、Terminal Hold、manual takeover、Best S&P、DF behavior、diagnostics、known limitations、Public RC precautionsなどを解説しています。Edition 1.10では、1.9で追加した実用的な初期設定とreference-data maintenance guidanceを引き継ぎつつ、LoTW `●` marker、Fox/Hound / MSHV compound-messageの**display-only**表示、現在到達可能な17個のAutoSeq candidate-priority categoryと正確なtie-break順序、Auto Tx Off、deferred manual-click、症状ベースのAutoSeq 2 troubleshooting、`CQRUN_MANUAL_CLICK_DEFERRED_FIRE` diagnostic markerをさらに明確化・追加しました。
 
-すべてのcurrent guide fileはP6 release pageから入手できます。
-
-https://github.com/jp1lrt/wsjtx-avelag/releases/tag/20260901A-REB522-P6
+このguide setは、公開停止前の最終P6 / P6-AL buildに対応するhistorical technical documentationとして残します。公開配布停止中のため、ここではdownload linkを案内しません。
 
 ---
 
-## Public RCとしての注意
+## 過去のP6 / P6-AL Public RCに関する注意
 
-P6 / P6-ALは**Public Release Candidate**であり、GA / stable releaseではありません。
+P6 / P6-ALは、公開当時 **Public Release Candidate** として扱っており、GA / stable releaseではありませんでした。
 
-初回試用時には、
+公開当時は、初回試用時に以下を推奨していました。
 
 1. 現在正常に動いているinstallationを残す
 2. 新しい別folderへ展開
@@ -441,13 +457,13 @@ P6ですべての既存問題が解決したとは考えていません。
 
 などがあります。
 
-Public RC validationに合格していることは、**すべてのmode、setting combination、boundary conditionを完全に試験済みである**という意味ではありません。
+過去のPublic RC validationに合格していることは、**すべてのmode、setting combination、boundary conditionを完全に試験済みである**という意味ではありません。
 
 ---
 
-## 不具合報告について
+## 開発・テスト中のフィードバック
 
-想定外の動作を見つけた場合は、可能な範囲で以下を添えてください。
+限定テスト等で想定外の動作を見つけた場合は、可能な範囲で以下を添えてください。
 
 - Standard / AL
 - title barに表示される完全なversion identifier
@@ -495,7 +511,7 @@ JP1LRT Editionは**独立したmodified edition**です。
 
 WSJT-X、WSJT-X Improved、JTDXいずれのofficial releaseでもありません。
 
-本projectはGPL licenseのWSJT-X / WSJT-X Improved系codeをベースとしています。binaryとともにcomplete source bundleを公開しており、適用されるlicense termsについてはsource bundle内のlicense / copyright noticeを参照してください。
+本projectはGPL licenseのWSJT-X / WSJT-X Improved系codeをベースとしています。過去に公開したbinaryについては、対応するcomplete source bundleを併せて提供してきました。今後配布を再開する場合も、適用されるGPL obligationsに従います。
 
 WSJT-Xのoriginal authors / contributors、Uwe / DG2YCBとWSJT-X Improved community、そしてJTDX developers / testersに心から感謝します。
 
@@ -510,7 +526,7 @@ WSJT-Xのoriginal authors / contributors、Uwe / DG2YCBとWSJT-X Improved commun
 - 1983年開局
 - JTDX authorized beta tester
 - JTDX日本語ローカライズ担当
-- WSJT-X Improved JP1LRT Edition developer / maintainer
+- この派生プロジェクトのdeveloper / maintainer（新しい独立名称は未確定）
 
 私が重視しているのは、**自動化そのものではありません。**
 
