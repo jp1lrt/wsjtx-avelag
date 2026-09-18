@@ -1,23 +1,36 @@
-# WSJT-X Improved JP1LRT Edition
+# JP1LRT Derivative Project — Rename in Progress
 
 🌐 **Languages:** English | [日本語](https://github.com/jp1lrt/wsjtx-avelag/blob/main/README_ja.md)
 
-[![Status](https://img.shields.io/badge/status-Public%20Release%20Candidate-orange)](https://github.com/jp1lrt/wsjtx-avelag/releases/tag/20260901A-REB522-P6)
-[![Current release](https://img.shields.io/badge/release-20260901A--REB522--P6-blue)](https://github.com/jp1lrt/wsjtx-avelag/releases/tag/20260901A-REB522-P6)
-![User Guide](https://img.shields.io/badge/User%20Guide-Edition%201.10%20%7C%2016%20languages-brightgreen)
+![Status](https://img.shields.io/badge/status-Public%20Downloads%20Suspended-red)
+![Project](https://img.shields.io/badge/project-Rename%20in%20Progress-yellow)
+![Development](https://img.shields.io/badge/development-Continuing-brightgreen)
 
-**A JTDX-inspired operating layer for WSJT-X Improved — preserving the original capabilities while adding smarter CQ RUN, Wanted/Hunting, safer QSO transitions, and operator-focused FT8/FT4 workflow.**
+## ⚠️ Public downloads temporarily suspended
 
-> **Current Public Release Candidate:** `20260901A-REB522-P6 / P6-AL`  
-> **Base:** WSJT-X Improved `3.1.0 / 260522` (22 May 2026)  
-> **This is not a WSJT-X Improved 3.2.0-based release.**
+The upstream WSJT-X project has requested that derivative versions use an **independent project name** rather than the **WSJT-X** name.
 
-**Latest release:**  
-https://github.com/jp1lrt/wsjtx-avelag/releases/tag/20260901A-REB522-P6
+I respect that request and am currently preparing a new independent name and software identity for this project.
+
+**Public binary downloads are therefore temporarily suspended until the new project name and identity have been finalized.**
+
+Development itself is continuing. Technical experiments, source work, regression testing, and limited private testing may continue while the public distribution is paused.
+
+This suspension is related to **project naming and identity**. It does **not** indicate that a newly discovered software defect or safety issue caused the download suspension.
+
+The name **“WSJT-X Improved JP1LRT Edition”** appears below only where needed to describe the project’s historical development and previously distributed builds. It should not be understood as the future project name.
+
+> **Public distribution status:** Temporarily suspended  
+> **Development status:** Continuing  
+> **Last publicly distributed build before suspension:** `20260901A-REB522-P6 / P6-AL`  
+> **Historical base of that build:** WSJT-X Improved `3.1.0 / 260522` (22 May 2026)  
+> **Rename notice updated:** 18 September 2026
+
+The future public-distribution model has not yet been fixed. The project may later return as a broadly available release, a limited-distribution technical project, or a primarily private development effort.
 
 ---
 
-## Why JP1LRT Edition exists
+## Why this project exists
 
 I am **Yoshi / JP1LRT**, an **authorized JTDX beta tester** and a contributor responsible for **Japanese localization**.
 
@@ -31,7 +44,7 @@ That led to a very simple idea:
 
 > **What if I could use the WSJT-X Improved decoder and platform, but operate it in a way that feels much more like JTDX?**
 
-That idea became **WSJT-X Improved JP1LRT Edition**.
+That idea became the derivative project that was previously distributed under the temporary label **WSJT-X Improved JP1LRT Edition**.
 
 ### It actually started with Avg/Lag
 
@@ -49,7 +62,7 @@ So the current edition grew organically from a simple practical question:
 
 The goal is **not** to turn WSJT-X Improved into JTDX, and not to remove or replace the capabilities that already exist in WSJT-X / WSJT-X Improved.
 
-Instead, JP1LRT Edition tries to:
+Instead, this project tries to:
 
 - **keep what already works,**
 - **preserve the original WSJT-X Improved capabilities,**
@@ -71,9 +84,9 @@ The article looks at Decode Start, staged decoding, the STD/MTD relationship, CP
 
 ---
 
-## What makes JP1LRT Edition different?
+## What makes this derivative different?
 
-JP1LRT Edition is designed around **real operating flow**.
+This derivative is designed around **real operating flow**.
 
 The priority is not simply to add more buttons or more automation. The goal is to make automatic operation **predictable**, while protecting the operator's intent and the state of an active QSO.
 
@@ -289,19 +302,21 @@ Keep `ALLCALL7.TXT` beside `wsjtx.exe`.
 
 ---
 
-## Current release: P6 / P6-AL
+## Last public build before suspension — P6 / P6-AL (historical reference)
 
 | Item | Current value |
 |---|---|
 | Release | `20260901A-REB522-P6 / P6-AL` |
-| Status | **Public Release Candidate** |
+| Historical status at publication | **Public Release Candidate** |
 | Base | WSJT-X Improved `3.1.0 / 260522` |
 | Base date | 22 May 2026 |
 | User Guide | Edition 1.10 |
 | Guide languages | **16** |
 | Windows builds | Standard GUI / AL GUI |
-| Source | Complete source bundles provided |
+| Source | Corresponding source bundles were provided with the public binaries |
 | Documentation update | 8 September 2026 — User Guide Edition 1.10 |
+
+**This table is retained for historical and technical reference. It is not a current download offer.**
 
 ### Standard and AL
 
@@ -337,32 +352,35 @@ Normal `CQ: First` and normal AutoSeq 2 CQ RUN no-progress behavior remain separ
 
 ---
 
-## Download and SHA-256
+## Public downloads temporarily suspended
 
-### Windows GUI packages
+There is currently **no public download offered from this README**.
 
-| Build | File | SHA-256 |
+Public binary distribution is paused while the project is being renamed and its future public identity is being reconsidered.
+
+The following values are retained only as **historical verification records** for the last public P6 / P6-AL packages distributed before the suspension.
+
+### Historical Windows GUI package hashes
+
+| Build | Historical file | SHA-256 |
 |---|---|---|
 | Standard GUI | `WSJT-X_20260901A-REB522-P6_win64.zip` | `d69ef54fb7d10feb3a7bc9620497eda8ec40c700f08f4d5302e8e016a02e992b` |
 | AL GUI | `WSJT-X_20260901A-REB522-P6-AL_win64.zip` | `658db59666b89ae4884365e5ba55087b234b29aaa0cf7950fee80fcb2ab800e7` |
 
-### Source bundles
+### Historical corresponding-source hashes
 
-| Build | File | SHA-256 |
+| Build | Historical file | SHA-256 |
 |---|---|---|
 | Standard source | `WSJT-X_20260901A-REB522-P6_source_bundle.zip` | `86e53df77bacaa93fc16bed15aec8e8ae1529231df16873486dacdb619803e2c` |
 | AL source | `WSJT-X_20260901A-REB522-P6-AL_source_bundle.zip` | `8ecb9f4d6ec4763a2eb03f7d33a1971466263b7435a7efc491e56b8365a1c1f4` |
 
-Corresponding `.sha256` sidecar files are provided with the release assets.
-
-**Download:**  
-https://github.com/jp1lrt/wsjtx-avelag/releases/tag/20260901A-REB522-P6
+These hashes do not imply that the corresponding packages are currently offered for public download.
 
 ---
 
-## User Guide Edition 1.10 — 16 languages
+## User Guide Edition 1.10 — 16 languages (historical documentation)
 
-The P6 / P6-AL User Guide is available in:
+The P6 / P6-AL User Guide set was published in:
 
 - 🇯🇵 Japanese
 - 🇬🇧 English
@@ -385,17 +403,15 @@ The English Edition 1.10 is the frozen semantic master for the multilingual guid
 
 The guides cover installation, Standard / AL differences, AutoSeq 2/3, Wanted/Hunting, Terminal Hold, manual takeover, Best S&P, DF behavior, diagnostics, known limitations, and Public RC precautions. Edition 1.10 retains the practical setup and reference-data guidance added in 1.9, and further clarifies the LoTW `●` marker, the display-only Fox/Hound / MSHV compound-message presentation, the 17 currently reachable AutoSeq candidate-priority categories and exact tie-break sequence, Auto Tx Off, deferred manual-click behavior, symptom-based AutoSeq 2 troubleshooting, and the `CQRUN_MANUAL_CLICK_DEFERRED_FIRE` diagnostic marker.
 
-All current guide files are available from the P6 release page:
-
-https://github.com/jp1lrt/wsjtx-avelag/releases/tag/20260901A-REB522-P6
+The guide set is retained as historical technical documentation for the last public P6 / P6-AL build. Public download links are intentionally not presented here while distribution is suspended.
 
 ---
 
-## Public RC precautions
+## Historical P6 / P6-AL operational precautions
 
-P6 / P6-AL are **Public Release Candidates**, not GA/stable releases.
+When P6 / P6-AL were publicly distributed, they were designated **Public Release Candidates**, not GA/stable releases.
 
-For initial testing:
+The following precautions accompanied those historical public builds:
 
 1. Keep your known-good installation.
 2. Extract JP1LRT Edition into a **new, separate folder**.
@@ -424,13 +440,13 @@ Current known items include:
 - Fox/Hound is not the primary modification/test scope.
 - Do not assume that every FT8/FT4 protection or score-mode rule applies identically to MSK144 or other modes.
 
-A Public RC validation result does **not** mean that every mode, setting combination, or boundary condition has been exhaustively exercised.
+A historical Public RC validation result does **not** mean that every mode, setting combination, or boundary condition has been exhaustively exercised.
 
 ---
 
-## Reporting a problem
+## Development and testing feedback
 
-If you find unexpected behavior, please include as much of the following as possible:
+For invited or limited testing, if you find unexpected behavior, please include as much of the following as possible:
 
 - Standard or AL build
 - complete version identifier from the title bar
@@ -476,7 +492,7 @@ JP1LRT Edition exists because of the work done by the upstream amateur-radio sof
 
 JP1LRT Edition is an **independently modified edition**. It is not an official release of WSJT-X, WSJT-X Improved, or JTDX.
 
-The project is based on the GPL-licensed WSJT-X / WSJT-X Improved code lineage. Complete source bundles are published with the binary releases; consult the source bundle and included license/copyright notices for the applicable terms.
+The project is based on the GPL-licensed WSJT-X / WSJT-X Improved code lineage. For previously distributed public binaries, corresponding source bundles were provided together with the applicable license and copyright notices. Any future distribution will continue to follow the applicable GPL obligations.
 
 My sincere thanks go to the original WSJT-X authors and contributors, Uwe / DG2YCB and the WSJT-X Improved community, and the JTDX developers and testers whose work and operating ideas made this project possible.
 
@@ -489,7 +505,7 @@ My sincere thanks go to the original WSJT-X authors and contributors, Uwe / DG2Y
 - Amateur radio operator since 1983
 - Authorized JTDX beta tester
 - JTDX Japanese localization contributor
-- Developer / maintainer of WSJT-X Improved JP1LRT Edition
+- Developer / maintainer of this derivative project (new independent name pending)
 
 My main interest is not automation for its own sake.
 
